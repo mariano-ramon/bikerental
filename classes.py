@@ -53,12 +53,11 @@ class FamilyPromotion(Promotion):
     description = "\n30%% applicable for groups of 3 to 5 bikes\n"
 
     def is_eligible(self):
-        eligiblity = False
+        eligibility = False
         if len(self.group.rents) >= 3 and len(self.group.rents) <= 5:
-            eligiblity = True
+            eligibility = True
 
-        return eligiblity
-
+        return eligibility
     def calculate_price(self):
         self.group.calculate_price()
         self.group.discount = self.group.subtotal * 0.3 
