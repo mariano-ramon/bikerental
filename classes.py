@@ -50,7 +50,6 @@ class Promotion(object):
 class FamilyPromotion(Promotion):
     """Family Promotion"""
 
-    #def __init__(self):
     description = "\n30%% applicable for groups of 3 to 5 bikes\n"
 
     def is_eligible(self):

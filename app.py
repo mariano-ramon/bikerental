@@ -1,9 +1,13 @@
-from models import Bike, Rent, Period, Group, FamilyPromotion
+# I'm aware that this was not expected and because of this  
+# it has no regard about design or good practices
+# I made it just to make sure the model made sense and expose my reasoning behind it
+
+from classes import Bike, Rent, Period, Group, FamilyPromotion
 from db import periods, bikes
 
 
 class Program(object):
-    """Main logic class"""
+    """Main"""
    
     group = None
     bikes = None
@@ -125,11 +129,13 @@ class Program(object):
             self.periods.append(Period(period['name'],period['price']))
             
         
-    # @staticmethod
-    # def get_period_menu():
         
 
 
 if __name__ == '__main__':
+    try:
+       input = raw_input
+    except NameError:
+       pass
     p = Program()
     p.run()
